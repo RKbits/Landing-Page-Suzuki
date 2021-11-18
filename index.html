@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzuki Bike Website Landing Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <section class="main">
+        <header>
+            <a href="#"><img src="/assets/img/logo.png" class="logo"></a>
+            <div class="toggle">                
+            </div>
+            <ul class="navigation">
+                <li><a href="#">Top Caracteristicas</a></li>
+                <li><a href="#">Galeria</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <h2>Listo Para <span>Correr</span></h2>
+            <a href="#" class="btn">Montar Ahora</a>
+            <img src="/assets/img/bike.png" class="bike" alt="">
+        </div>
+        <!-- slider content -->
+        <div class="slider">
+            <div class="slides active">
+                <h2><span>Motor</span><br>599 cc</h2>
+                <h2><span>Max Velocidad</span><br>260 Kmph</h2>
+            </div>
+            <div class="slides">
+                <h2><span>Kilometraje</span><br>114Kmpl</h2>
+                <h2><span>0-100 Kmph</span><br>4 Segundos</h2>
+            </div>
+            <div class="slides">
+                <h2><span>Ruedas</span><br>17-Pulgada Aleacion</h2>
+                <h2><span>Tipo Neumatico</span><br>Sin camara</h2>
+            </div>
+        </div>
+        <div class="footer">
+            <ul class="sci">
+                <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            </ul>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    //navigation
+    const toggle=document.querySelector(".toggle")
+    const navigation=document.querySelector(".navigation")
+    toggle.onclick=function(){
+        navigation.classList.toggle("active")
+        toggle.classList.toggle("active")
+    }
+
+    //slide
+    const slides=document.querySelectorAll(".slides");
+    const dots=document.querySelectorAll(".dot");
+
+    function setActive(i){
+        for(slide of slides)
+        slide.classList.remove("active");
+        slides[i].classList.add("active");
+        for(dot of dots)
+        dot.classList.remove("active");
+        dots[i].classList.add("active");
+    }
+    for(let j=0;j<dots.length;j++){
+        dots[j].addEventListener("click", function(){
+            setActive(j)
+        })
+    }
+</script>
+</body>
+</html>
